@@ -1,0 +1,29 @@
+# import sys
+# sys.path.append("/home/jasonzou/Documents/Semantic_Safety")
+
+from semantic_safety_pipeline import run_semantic_safety_pipeline_from_file
+from environments import plot_generated_semantic_map
+
+image_path = "/home/jasonzou/Documents/openvla/experiments/env_images/libero_spatial_temp_task0_birdview.png"
+task_path = "/home/jasonzou/Documents/openvla/experiments/env_images/libero_spatial_temp_task0_task.txt"
+
+print("Running semantic safety pipeline...\n")
+
+result = run_semantic_safety_pipeline_from_file(
+    image_path=image_path,
+    task_path=task_path,
+    save_dir="/home/jasonzou/Documents/Semantic_Safety/test_outputs",
+    verbose=True,
+)
+
+print("\n--- FINAL PROMPT ---")
+print(result["rewritten_openvla_prompt"])
+
+# optional visualization
+plot_generated_semantic_map(
+    result["semantic_map"],
+    "/home/jasonzou/Documents/Semantic_Safety/test_outputs/render.png",
+)
+
+print("\nSaved outputs to:")
+print("/home/jasonzou/Documents/Semantic_Safety/test_outputs/")

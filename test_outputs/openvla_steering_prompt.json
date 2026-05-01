@@ -1,0 +1,26 @@
+{
+  "original_task": "pick up the black bowl between the plate and the ramekin and place it on the plate",
+  "rewritten_openvla_prompt": "Move the black bowl located between the plate and ramekin and place it onto the plate.",
+  "constraints": [
+    "Do not move objects other than the black bowl.",
+    "Ensure precise placement of the black bowl on the plate."
+  ],
+  "important_objects": [
+    {
+      "object_id": "object_black_bowl",
+      "name": "black bowl",
+      "role": "target"
+    },
+    {
+      "object_id": "object_plate",
+      "name": "plate",
+      "role": "contextual"
+    },
+    {
+      "object_id": "object_ramekin",
+      "name": "ramekin",
+      "role": "contextual"
+    }
+  ],
+  "reasoning_summary": "The task requires picking the black bowl situated between the plate and ramekin and placing it onto the plate without disturbing other items, prioritizing accuracy and safety."
+}

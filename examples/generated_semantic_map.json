@@ -1,0 +1,52 @@
+{
+  "scene_summary": "A robot arm positioned at the top center of a wooden table with objects including a black bowl, plate, ramekin, and additional items arranged on the table surface.",
+  "zones": [
+    {
+      "id": "zone_1",
+      "name": "workspace table surface",
+      "approx_location": "center",
+      "relative_size": "medium",
+      "semantic_labels": [
+        "safe",
+        "goal_relevant"
+      ],
+      "task_relevance": "high",
+      "task_role": "goal_related"
+    },
+    {
+      "id": "zone_2",
+      "name": "robot base area",
+      "approx_location": "top-center",
+      "relative_size": "small",
+      "semantic_labels": [
+        "safe"
+      ],
+      "task_relevance": "medium",
+      "task_role": "preferred"
+    },
+    {
+      "id": "zone_3",
+      "name": "floor surrounding table",
+      "approx_location": "outer area surrounding table",
+      "relative_size": "large",
+      "semantic_labels": [
+        "safe"
+      ],
+      "task_relevance": "low",
+      "task_role": "neutral"
+    }
+  ],
+  "start": {
+    "approx_location": "top-center near robot base"
+  },
+  "goal": {
+    "approx_location": "center of table on plate"
+  },
+  "task_interpretation": {
+    "primary_objective": "Pick up the black bowl located between the plate and the ramekin and place it on the plate.",
+    "constraints": [
+      "Avoid disturbing or moving other objects unnecessarily",
+      "Operate within the safe workspace on the table surface"
+    ]
+  }
+}

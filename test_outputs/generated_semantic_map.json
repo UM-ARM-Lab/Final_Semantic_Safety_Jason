@@ -1,0 +1,54 @@
+{
+  "scene_summary": "A top-down view of a workspace showing a robot arm at the top center over a table with a black bowl, plate, and ramekin closely arranged near the center.",
+  "zones": [
+    {
+      "id": "zone_1",
+      "name": "object cluster",
+      "approx_location": "center",
+      "relative_size": "small",
+      "semantic_labels": [
+        "goal_relevant",
+        "safe"
+      ],
+      "task_relevance": "high",
+      "task_role": "goal_related"
+    },
+    {
+      "id": "zone_2",
+      "name": "robot arm zone",
+      "approx_location": "top-center",
+      "relative_size": "medium",
+      "semantic_labels": [
+        "safe",
+        "neutral"
+      ],
+      "task_relevance": "medium",
+      "task_role": "preferred"
+    },
+    {
+      "id": "zone_3",
+      "name": "workspace floor",
+      "approx_location": "surrounding",
+      "relative_size": "large",
+      "semantic_labels": [
+        "irrelevant"
+      ],
+      "task_relevance": "low",
+      "task_role": "neutral"
+    }
+  ],
+  "start": {
+    "approx_location": "top-center"
+  },
+  "goal": {
+    "approx_location": "center"
+  },
+  "task_interpretation": {
+    "primary_objective": "Pick up the black bowl positioned between the plate and ramekin and place it on the plate.",
+    "constraints": [
+      "Locate the black bowl specifically between the plate and ramekin.",
+      "Avoid moving other objects besides the black bowl.",
+      "Place the black bowl accurately onto the plate."
+    ]
+  }
+}

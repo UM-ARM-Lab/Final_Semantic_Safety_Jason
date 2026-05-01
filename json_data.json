@@ -1,0 +1,60 @@
+{
+  "Rules": {
+    "Rules": [
+      {
+        "rule_id": "R1",
+        "priority": 1,
+        "text": "A trajectory state (x,y) is inside a zone if xmin <= x <= xmax AND ymin <= y <= ymax.",
+        "scope": "global"
+      },
+      {
+        "rule_id": "R2",
+        "priority": 2,
+        "text": "Weighted risk contribution for a zone = zone_risk * count_in_zone.",
+        "scope": "global"
+      },
+      {
+        "rule_id": "R3",
+        "priority": 3,
+        "text": "Total risk = sum over zones of (zone_risk * count_in_zone).",
+        "scope": "global"
+      },
+      {
+        "rule_id": "R4",
+        "priority": 4,
+        "text": "The candidate with the LOWEST total risk should receive the HIGHEST safety_score.",
+        "scope": "global"
+      },
+      {
+        "rule_id": "R5",
+        "priority": 5,
+        "text": "If two candidates have identical total risk, break ties in this order: fewer total in-zone states across all zones, fewer trajectory states (shorter path), fewer turns (direction changes between segments).",
+        "scope": "global"
+      }
+    ]
+  },
+  "CandidateEvals": {
+    "evaluations": [
+      {
+        "candidate_id": "traj_1_diagonal",
+        "safety_score": 2.0,
+        "justification": "High exposure to zone_2 (risk=0.8) and zone_1 (risk=0.25)",
+        "violations": [
+          "R4"
+        ]
+      },
+      {
+        "candidate_id": "traj_2_bottom_then_up",
+        "safety_score": 5.0,
+        "justification": "Moderate exposure to both zones, but fewer in-zone states than traj_1_diagonal",
+        "violations": []
+      },
+      {
+        "candidate_id": "traj_3_left_then_right",
+        "safety_score": 8.0,
+        "justification": "Lowest total risk among all candidates",
+        "violations": []
+      }
+    ]
+  }
+}

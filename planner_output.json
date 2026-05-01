@@ -1,0 +1,73 @@
+{
+  "Rules": {
+    "Rules": [
+      {
+        "rule_id": "R1",
+        "priority": 1,
+        "text": "A trajectory state is inside a zone if its x-coordinate and y-coordinate are within the zone's bounds.",
+        "scope": "global"
+      },
+      {
+        "rule_id": "R2",
+        "priority": 1,
+        "text": "Weighted zone risk is calculated as zone risk multiplied by count of trajectory states in the zone.",
+        "scope": "global"
+      },
+      {
+        "rule_id": "R3",
+        "priority": 1,
+        "text": "Total risk is the sum of weighted zone risks for all zones.",
+        "scope": "global"
+      }
+    ]
+  },
+  "CandidateEvals": {
+    "evaluations": [
+      {
+        "candidate_id": "traj_1",
+        "zone_exposures": {
+          "zone_a": 3,
+          "zone_b": 2
+        },
+        "total_risk": 0.75,
+        "rank": 1,
+        "justification": "Lowest total risk among all candidates.",
+        "violations": [
+          "R1",
+          "R2",
+          "R3"
+        ]
+      },
+      {
+        "candidate_id": "traj_2",
+        "zone_exposures": {
+          "zone_a": 4,
+          "zone_b": 1
+        },
+        "total_risk": 0.85,
+        "rank": 2,
+        "justification": "Higher total risk than traj_1.",
+        "violations": [
+          "R1",
+          "R2",
+          "R3"
+        ]
+      },
+      {
+        "candidate_id": "traj_3",
+        "zone_exposures": {
+          "zone_a": 5,
+          "zone_b": 0
+        },
+        "total_risk": 0.25,
+        "rank": 1,
+        "justification": "Lowest total risk among all candidates.",
+        "violations": [
+          "R1",
+          "R2",
+          "R3"
+        ]
+      }
+    ]
+  }
+}

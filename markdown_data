@@ -1,0 +1,53 @@
+# input data
+
+## Goal
+['deliver surgical instrument safely', 'avoid patient and staff', 'respect sterility']
+
+## Entity ID
+robot_eef
+
+## Context: Entities
+{'patient': {'type': 'human', 'pos': (0.0, 0.0)}, 'surgeon': {'type': 'human', 'pos': (1.0, 0.5)}, 'sterile_table': {'type': 'surface', 'pos': (0.5, 1.0)}, 'waste_bin': {'type': 'container', 'pos': (-0.5, 1.0)}}
+
+## Context: Relations
+[]
+
+## Context: Rules
+[]
+
+
+    ### Candidate 1: candidate_0
+
+    #### Trajectory time
+    [0.0, 0.5, 1.0]
+
+    #### Trajectory states
+    [{'pos': (0.5, 1.0)}, {'pos': (0.8, 0.8)}, {'pos': (1.0, 0.6)}]
+
+    #### Semantic labels
+    {'held_object': {'tags': ['sharp', 'metallic'], 'parts': {'handle': ['grasped'], 'blade': ['sharp', 'no_touch']}, 'state': {'sterility': 'sterile'}}}
+    
+
+    ### Candidate 2: candidate_1
+
+    #### Trajectory time
+    [0.0, 0.5, 1.0]
+
+    #### Trajectory states
+    [{'pos': (0.5, 1.0)}, {'pos': (0.2, 0.2)}, {'pos': (1.0, 0.6)}]
+
+    #### Semantic labels
+    {'held_object': {'tags': ['sharp', 'metallic'], 'parts': {'handle': ['grasped'], 'blade': ['sharp', 'exposed']}, 'state': {'sterility': 'sterile'}}}
+    
+
+    ### Candidate 3: candidate_2
+
+    #### Trajectory time
+    [0.0, 0.5, 1.0]
+
+    #### Trajectory states
+    [{'pos': (0.5, 1.0)}, {'pos': (0.8, 0.8)}, {'pos': (0.5, 1.0)}]
+
+    #### Semantic labels
+    {'held_object': {'tags': ['sharp', 'metallic'], 'parts': {'handle': ['grasped'], 'blade': ['sharp']}, 'state': {'sterility': 'unsterile'}}}
+    

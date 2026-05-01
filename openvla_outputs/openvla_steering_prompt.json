@@ -1,0 +1,27 @@
+{
+  "original_task": "pick up the black bowl next to the ramekin and place it on the plate",
+  "rewritten_openvla_prompt": "Grasp the black bowl adjacent to the ramekin and set it down on the plate without disturbing other items.",
+  "constraints": [
+    "Only interact with the black bowl adjacent to the ramekin",
+    "Place the black bowl on the plate carefully",
+    "Avoid disturbing other objects on the table"
+  ],
+  "important_objects": [
+    {
+      "object_id": "object_1",
+      "name": "black bowl",
+      "role": "target"
+    },
+    {
+      "object_id": "object_2",
+      "name": "ramekin",
+      "role": "contextual"
+    },
+    {
+      "object_id": "object_3",
+      "name": "plate",
+      "role": "target"
+    }
+  ],
+  "reasoning_summary": "The task requires selecting the black bowl next to the ramekin and placing it on the plate while ensuring other objects remain undisturbed, reflecting all task constraints."
+}

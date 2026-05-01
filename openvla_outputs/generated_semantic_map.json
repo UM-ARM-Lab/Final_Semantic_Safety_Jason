@@ -1,0 +1,63 @@
+{
+  "scene_summary": "Workspace with robotic arm positioned above a light wooden table containing a black bowl, ramekin, plate, and other items.",
+  "zones": [
+    {
+      "id": "zone_1",
+      "name": "bowl_area",
+      "approx_location": "center-right",
+      "relative_size": "small",
+      "semantic_labels": [
+        "goal_relevant"
+      ],
+      "task_relevance": "high",
+      "task_role": "goal_related"
+    },
+    {
+      "id": "zone_2",
+      "name": "plate_area",
+      "approx_location": "bottom-right",
+      "relative_size": "small",
+      "semantic_labels": [
+        "goal_relevant"
+      ],
+      "task_relevance": "high",
+      "task_role": "goal_related"
+    },
+    {
+      "id": "zone_3",
+      "name": "workspace_center",
+      "approx_location": "center",
+      "relative_size": "medium",
+      "semantic_labels": [
+        "safe"
+      ],
+      "task_relevance": "medium",
+      "task_role": "preferred"
+    },
+    {
+      "id": "zone_4",
+      "name": "robot_base",
+      "approx_location": "top-center",
+      "relative_size": "small",
+      "semantic_labels": [
+        "safe"
+      ],
+      "task_relevance": "medium",
+      "task_role": "neutral"
+    }
+  ],
+  "start": {
+    "approx_location": "center-right"
+  },
+  "goal": {
+    "approx_location": "bottom-right"
+  },
+  "task_interpretation": {
+    "primary_objective": "Pick up the black bowl next to the ramekin and place it on the plate",
+    "constraints": [
+      "Only interact with the black bowl adjacent to the ramekin",
+      "Place the black bowl on the plate carefully",
+      "Avoid disturbing other objects on the table"
+    ]
+  }
+}

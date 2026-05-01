@@ -1,0 +1,201 @@
+{
+  "entity_id": "robot_1",
+  "goal": [
+    "move from start to goal safely"
+  ],
+  "context": {
+    "entities": {
+      "world": {
+        "type": "workspace",
+        "bounds": {
+          "xmin": 0.0,
+          "ymin": 0.0,
+          "xmax": 10.0,
+          "ymax": 10.0
+        }
+      },
+      "zone_a": {
+        "type": "zone",
+        "name": "Zone A",
+        "bounds": {
+          "xmin": 0.0,
+          "ymin": 0.0,
+          "xmax": 4.0,
+          "ymax": 4.0
+        },
+        "semantic_score": 0.25
+      },
+      "zone_b": {
+        "type": "zone",
+        "name": "Zone B",
+        "bounds": {
+          "xmin": 1.0,
+          "ymin": 1.0,
+          "xmax": 10.0,
+          "ymax": 10.0
+        },
+        "semantic_score": 0.8
+      },
+      "start": {
+        "type": "point",
+        "x": 0.5,
+        "y": 0.5
+      },
+      "goal": {
+        "type": "point",
+        "x": 9.5,
+        "y": 9.5
+      }
+    },
+    "relations": [
+      {
+        "type": "contains",
+        "a": "world",
+        "b": "zone_a"
+      },
+      {
+        "type": "contains",
+        "a": "world",
+        "b": "zone_b"
+      }
+    ],
+    "rules": [
+      {
+        "type": "demo_rule",
+        "text": "Prefer trajectories that avoid high-risk zones."
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "id": "traj_1",
+      "trajectory": {
+        "time": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "states": [
+          {
+            "x": 0.5,
+            "y": 0.5
+          },
+          {
+            "x": 2.5,
+            "y": 2.5
+          },
+          {
+            "x": 5.0,
+            "y": 5.0
+          },
+          {
+            "x": 7.5,
+            "y": 7.5
+          },
+          {
+            "x": 9.5,
+            "y": 9.5
+          }
+        ]
+      },
+      "semantics": {
+        "semantic_zone_ids": [
+          "zone_a",
+          "zone_b"
+        ]
+      }
+    },
+    {
+      "id": "traj_2",
+      "trajectory": {
+        "time": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "states": [
+          {
+            "x": 0.5,
+            "y": 0.5
+          },
+          {
+            "x": 3.5,
+            "y": 0.5
+          },
+          {
+            "x": 6.5,
+            "y": 0.5
+          },
+          {
+            "x": 9.5,
+            "y": 0.5
+          },
+          {
+            "x": 9.5,
+            "y": 5.0
+          },
+          {
+            "x": 9.5,
+            "y": 9.5
+          }
+        ]
+      },
+      "semantics": {
+        "semantic_zone_ids": [
+          "zone_a",
+          "zone_b"
+        ]
+      }
+    },
+    {
+      "id": "traj_3",
+      "trajectory": {
+        "time": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "states": [
+          {
+            "x": 0.5,
+            "y": 0.5
+          },
+          {
+            "x": 0.5,
+            "y": 3.5
+          },
+          {
+            "x": 0.5,
+            "y": 6.5
+          },
+          {
+            "x": 0.5,
+            "y": 9.5
+          },
+          {
+            "x": 5.0,
+            "y": 9.5
+          },
+          {
+            "x": 9.5,
+            "y": 9.5
+          }
+        ]
+      },
+      "semantics": {
+        "semantic_zone_ids": [
+          "zone_a",
+          "zone_b"
+        ]
+      }
+    }
+  ]
+}
